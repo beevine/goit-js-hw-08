@@ -5,9 +5,7 @@ formRef.addEventListener('submit', onSubmit);
 
 function onInput(evt) {
   const evtValue = evt.target.value.trim();
-  console.log(evtValue);
   const evtName = evt.target.name;
-  console.log(evtName);
   const data = getData();
   const obj = data ? JSON.parse(data) : {};
   obj[evtName] = evtValue;
@@ -20,12 +18,10 @@ function savedData() {
     return;
   }
   const obj = JSON.parse(data);
-  console.log(obj);
   const dataKeys = Object.keys(obj);
   for (let key of dataKeys) {
     formRef.elements[key].value = obj[key];
   }
-  console.log(dataKeys);
 }
 savedData();
 
